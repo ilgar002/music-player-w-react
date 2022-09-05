@@ -1,0 +1,114 @@
+.sidebar {
+    height: 100vh;
+    width: 300px;
+    background: linear-gradient(360deg, #093028, #237A57);
+    color: #F8F7F3;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    position: absolute;
+    left: -100%;
+    transition: all .3s ease;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+
+    .caption {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+
+        svg {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .go-back {
+            display: none;
+        }
+    }
+
+
+
+    &.active {
+        position: relative;
+        left: 0;
+    }
+
+    .number-items {
+        padding: 10px 20px;
+        font-weight: 300;
+        letter-spacing: .3px;
+        font-size: .95rem;
+    }
+
+    .items {
+        height: 85%;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            cursor: pointer;
+
+
+            .song-cover {
+                height: 60px;
+                width: 60px;
+            }
+
+            .description {
+                padding-left: 1rem;
+                font-weight: 400;
+                // color: #646464;
+                display: flex;
+                flex-direction: column;
+
+                .song-name {
+                    font-size: 1rem;
+                }
+
+                .artist {
+                    font-size: 0.7rem;
+                }
+            }
+
+            &.active {
+                background-color: #0ca395;
+            }
+
+            img.sound {
+                margin-left: auto;
+                width: 25px;
+            }
+        }
+    }
+}
+
+@media(max-width:992px) {
+    .sidebar {
+        .caption {
+            .go-back {
+                display: block;
+            }
+        }
+    }
+}
+
+@media(max-width:650px) {
+    .sidebar {
+        .items {
+            height: 70%;
+        }
+
+        &.active {
+            position: absolute;
+            z-index: 1000;
+        }
+    }
+}

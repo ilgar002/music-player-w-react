@@ -1,0 +1,38 @@
+.preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    .song-cover {
+        width: 350px;
+        height: 350px;
+
+        img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+        }
+    }
+
+    .song-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        .song-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .singer-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+    }
+}

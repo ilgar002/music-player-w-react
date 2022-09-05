@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(360deg, #093028, #237A57);
+    color: #F8F7F3;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+
+    .left-container {}
+
+    .right-container {
+        width: 50%;
+        margin: 0 auto;
+        height: 100vh;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .filter-layout {
+        display: none;
+        opacity: 0;
+        opacity: 1;
+        z-index: 3;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -3;
+        background: rgba(0, 0, 0, 0.4984);
+    }
+}
+
+
+@media(max-width:1200px) {
+    .container {
+        .right-container {
+            width: 70%;
+        }
+    }
+}
+
+@media(max-width:992px) {
+    .container {
+        .right-container {
+            width: 80%;
+
+            .preview {
+                .song-cover {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:650px) {
+    .container {
+        .right-container {
+            width: 90%;
+
+            .preview {
+                .song-cover {
+                    width: 280px;
+                    height: 280px;
+                }
+            }
+        }
+
+        .filter-layout {
+            display: block;
+            opacity: 1;
+            z-index: 3;
+        }
+    }
+}

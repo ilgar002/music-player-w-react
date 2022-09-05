@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 0 20px;
+
+    h2 {
+        font-size: 1.7rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+
+    button.library {
+        background-color: transparent;
+        border: 1px solid #F8F7F3;
+        padding: 6px;
+        border-radius: 3px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.3rem;
+        color: #F8F7F3;
+    }
+}
