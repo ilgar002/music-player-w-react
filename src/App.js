@@ -9,7 +9,8 @@ import SongsData from './data.js';
 
 const App = () => {
 
-  const [SongList, setSongList] = useState(SongsData)
+  // const [SongList, setSongList] = useState(SongsData)
+  let SongList = SongsData
   const [currentIndex, setCurrentIndex] = useState(localStorage.getItem("currentIndex") ? Number(localStorage.getItem("currentIndex")) : 0)
   const [percentage, setPercentage] = useState(0)
   const [sidebarVisibility, setSidebarVisibility] = useState(false)
@@ -20,7 +21,7 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem('currentIndex', currentIndex)
     SongList[currentIndex].active = true
-  }, [currentIndex])
+  }, [currentIndex, SongList])
 
 
   function onclickChangeSong(id) {
@@ -54,7 +55,11 @@ const App = () => {
         <Header
           setSidebarVisibility={setSidebarVisibility}
         />
-        <Preview SongList={SongList} currentIndex={currentIndex} />
+        <Preview
+          SongList={SongList}
+          currentIndex={currentIndex}
+          src={SongList[currentIndex].cover}
+        />
         <Controller
           audioRef={audioRef}
           isPlaying={isPlaying}
